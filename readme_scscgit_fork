@@ -1,0 +1,21 @@
+I added support for another games.
+
+On line 36 old version was:
+$market_html = access_cached($listing_url, 'market_'.$card_hash.'.html');
+
+I had to change it so some special symbols dont cause problems file names.
+$market_html = access_cached($listing_url, 'market_'.rawurlencode($card_hash).'.html');
+
+Other than that the only changes were occurrences like
+json/753/6 and 753
+
+I had to change numbers:
+CS:GO json/730/2 and 730
+TF2 json/440/2 and 440
+DOTA2 json/570/2 and 570
+BBT json/238460/2 and 238460
+
+(also default currency from USD to EUR)
+
+Feel free to download and change, host on web servers etc. Header says it's open-source.
+Original code created by Julian Fietkau. I reserve no rights.
